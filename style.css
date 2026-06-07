@@ -1270,9 +1270,13 @@ header.scrolled {
   margin: 0 auto 30px;
 } */
 
+
+
 /* ── CTA BANNER ── */
+/*
 #cta-banner {
-  background: linear-gradient(135deg, var(--gold) 0%, #b8942e 100%);
+  /* background: linear-gradient(135deg, var(--gold) 0%, #b8942e 100%); *
+  
   padding: 100px 24px;
   text-align: center;
   position: relative;
@@ -1308,6 +1312,93 @@ header.scrolled {
   max-width: 550px;
   margin: 0 auto 36px;
   line-height: 1.7;
+} */
+
+
+#cta-banner {
+    position: relative;
+    overflow: hidden;
+    min-height: 500px; /* Adjust section height */
+    padding: 100px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Background Video */
+#cta-banner .bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+/* Dark Overlay for readability */
+.video-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+}
+
+/* Existing pattern overlay */
+#cta-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 10 L90 30 L90 70 L50 90 L10 70 L10 30 Z' stroke='rgba(255,255,255,0.05)' fill='none' stroke-width='1'/%3E%3C/svg%3E");
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Content */
+.cta-content {
+    position: relative;
+    z-index: 3;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#cta-banner h2 {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    color: #fff;
+    margin-bottom: 20px;
+    line-height: 1.25;
+    font-weight: 700;
+}
+
+#cta-banner h2 em {
+    color: #ffd700;
+    font-style: italic;
+}
+
+#cta-banner p {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.1rem;
+    max-width: 550px;
+    margin: 0 auto 36px;
+    line-height: 1.7;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    #cta-banner {
+        min-height: 400px;
+        padding: 80px 20px;
+    }
+
+    #cta-banner h2 {
+        font-size: 2rem;
+    }
+
+    #cta-banner p {
+        font-size: 1rem;
+    }
 }
 
 /* ── CONTACT US & FORM ── */
