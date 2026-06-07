@@ -3899,3 +3899,23 @@ img, video, svg {
     color: #000;
   }
 }
+/* ── CORPORATE IMAGE MOBILE FIX ── */
+.corp-image-placeholder span img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .corp-image-placeholder span img {
+    max-height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .corp-image-placeholder span img {
+    max-height: 280px;
+  }
+}
